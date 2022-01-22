@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Gracias</title>
+</head>
+<body>
+        <% if (locals.data) { %>
+            <main class="bkg-<%=locals.bkgColor%>">
+            
+        <h1> Hola <%= data.name %>, elegiste el color:
+            <span class="span-Blanco">
+                <%= data.colors %></span>. Tu email es: <%= data.email %> y tu edad es: <%= data.age %></h1>
+    
+        <% } %>
+    <h1><span class="span-Blanco"><%= data.name %></span>, gracias por visitarnos! </h1>
+<br><br><br>
+<button><a href="/">Volver al inicio</a></button>
+
+
+</main>
+</body>
+</html>

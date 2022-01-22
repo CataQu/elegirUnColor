@@ -1,0 +1,23 @@
+.bkg-Amarillo {
+    background-color: rgb(255, 196, 0);
+}
+
+.bkg-Rojo {
+    background-color: rgb(172, 2, 2)
+}
+
+.bkg-Azul {
+    background-color: rgba(0, 47, 255, 0.904)
+}
+
+.bkg-Violeta {
+    background-color: rgba(128, 0, 128, 0.924)
+}
+
+.bkg-Verde {
+    background-color: rgba(0, 128, 0, 0.883)
+}
+
+.span-Blanco {
+    color: white
+}

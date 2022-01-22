@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Colores</title>
+</head>
+
+<body>
+    <% if (userData.name != undefined) { %>
+        <main class="bkg-<%=locals.userData.colors%>">
+        
+    <h1> Hola <%= userData.name %>, elegiste el color:
+        <span class="span-Blanco">
+            <%= userData.colors %></span>. Tu email es: <%= userData.email %> y tu edad es: <%= userData.age %></h1>
+
+    <% } %>
+    <form action="/" method="post">
+        <label>Ingresa tu nombre</label>
+        <input type='text' name="name" value="<%= locals.oldData && oldData.name ? oldData.name : null _%> ">
+        <p style="color: red"><%= locals.errors?.name?.msg _%> </p>
+        <label>Seleccione un color</label>
+        <select name="colors">
+            <% let colores = ['Rojo', 'Azul', 'Amarillo', 'Violeta', 'Verde'] %>
+            <option value="">Elige un color</option>
+            <% for( let i = 0; i < colores.length; i++ ) { %>
+            <option value="<%= colores[i] %>">
+                <%= colores[i] %> </option>
+
+            <% } %>
+        </select>
+        <p style="color: red"><%= locals.errors?.colors?.msg _%> </p>
+        <label>Ingrese su email</label>
+        <input type='email' name="email" value="<%= locals.oldData && oldData.email ? oldData.email : null _%> ">
+        <p style="color: red"><%= locals.errors?.email?.msg _%> </p>
+        <label>Ingrese su edad</label>
+        <input type='text' name="age" value="<%= locals.oldData?.age _%> ">
+        <p style="color: red"><%= locals.errors?.age?.msg _%> </p>
+        <input type="checkbox" name="rememberColor"> <label>Recordar color</label>
+        <input type="submit" value="Enviar"><br>
+    </form>
+<br><br><br>
+    <button><a href="/borrar">Borrar color</a></button>
+<br>
+<br>
+<br>
+<br>
+
+  <button>  <a href="/gracias">GRACIAS</a></button>
+</main>
+</body>
+
+</html>
